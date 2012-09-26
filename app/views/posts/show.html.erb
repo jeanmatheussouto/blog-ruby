@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h1>Posts</h1>
+</div>
+
+<div>
+  <h2><%= @post.title %></h2>
+  <p><%= @post.body %></p>
+</div>
+
+<div>
+  <h2>Comentários</h2>
+  <%= @post.comments.each do |comment| %>
+  <h3> <%= comment.author %> </h3>
+  <p> <%= comment.body_comment %> </p>
+  <span> <%= comment.created_at %> </span>
+  <% end %>
+</div>
+
+<div>
+  <h2>Deixe seu comentário</h2>
+
+  <%= form_for ([@post, @post.comments.build]), :html => { :class => 'form-horizontal' } do |f| %>
+    <div class="control-group">
+      <%= f.label :author, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :author, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :body_comment, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :body_comment, :class => 'text_area' %>
+      </div>
+    </div>
+
+    <div >
+      <%= f.submit "Enviar Comentário", :class => 'btn btn-primary btn-large' %>
+    </div>
+  <% end %>
+
+</div>
+
+<div class="form-actions">
+  <%= link_to "Voltar", posts_path, :class => 'btn btn-large'  %>
+  <%= link_to "Editar", edit_post_path(@post), :class => 'btn btn-large' %>
+  <%= link_to "Excluir", post_path(@post),
+                        :method => 'delete',
+                        :confirm => "Excluir este post?",
+                        :class => 'btn btn-danger btn-large' %>
+</div>

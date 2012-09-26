@@ -1,0 +1,18 @@
+<div class="page-header">
+  <h1>Comentários</h1>
+</div>
+
+<div>
+  <h5><%= @comment.author %></h5>
+  <p> <%= @comment.body_comment %> </p>
+</div>
+
+<div class="form-actions">
+  <%= link_to "Voltar", comments_path, :class => 'btn btn-large'  %>
+  <%= link_to "Editar", edit_comment_path(@comment), :class => 'btn btn-large' %>
+  <%= link_to "Excluir",
+              comment_path(@comment),
+              :method => 'delete',
+              :confirm => "Exluir este comentário?",
+              :class => 'btn btn-danger btn-large' %>
+</div>

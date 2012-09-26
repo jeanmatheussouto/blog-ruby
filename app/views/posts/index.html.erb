@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>Nossas postagens</h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Data de criação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= link_to post.title, post_path(post) %></td>
+        <td><%= post.created_at.to_s(:post) %></td>
+        <td>
+          <%= link_to "Editar", edit_post_path(post), :class => 'btn btn-mini' %>
+          <%= link_to "Excluir",
+                      post_path(post),
+                      :method => :delete,
+                      :confirm => "Excluir este post?",
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Crie seu POST aqui!!", new_post_path, :class => 'btn btn-primary btn-large' %>
