@@ -11,36 +11,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<div class="eng_header">
-		<header class="container">
-			<h1>MENU</h1>
-		</header>
-	</div>
+	<div>
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container menu" style="width: auto;">
+					<%= link_to "Super blog - RoR", posts_path(), :class => "brand margin_left"%>
+					<%= link_to "Novo Post", new_post_path(), :class => "brand margin_left"%>
+					<form class="navbar-search pull-right margin_right" action="">
+						<input type="text" class="search-query span2" placeholder="Buscar...">
+					</form>
+				</div>
+			</div><!-- /navbar-inner -->
+		</div>
 
-	<div class="eng_bg">
-	
-	</div>
 
-	<div class="container">
-		<div class="row">
-			<div class="span9"><%= yield %></div>
-			<div class="span3 sidebar_left">
-				<h2>Ultimos Posts</h2>
+		<div class="container">
+			<div class="row">
+				<div class="span9"><%= yield %></div>
+				<div class="span3 sidebar_left">
+					<h2>Últimos Posts</h2>
+
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="eng_footer">
-		<footer class="container">
-			
-		</footer>
-	</div>
+		<div class="eng_footer">
+			<footer class="container">
 
-	<div class="eng_marca">
-		<div class="container">
-			<h5>RubyOnRails - Ciência da Computação </h5>	
+			</footer>
 		</div>
-		
+
+		<div class="eng_marca">
+			<div class="container">
+				<h5>RubyOnRails - Ciência da Computação </h5>	
+			</div>
+
+		</div>
 	</div>
 
 </body>

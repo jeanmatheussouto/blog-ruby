@@ -1,18 +1,19 @@
 <div class="page-header">
-  <h1>Posts</h1>
+  <h2><%= link_to "Posts", posts_path() %></h2>
 </div>
 
-<div>
-  <h2><%= @post.title %></h2>
+<div class="show_post">
+  <h1><%= @post.title %></h1>
   <p><%= @post.body %></p>
 </div>
 
-<div>
+<div class="show_comment">
   <h2>Comentários</h2>
   <%= @post.comments.each do |comment| %>
-  <h3> <%= comment.author %> </h3>
-  <p> <%= comment.body_comment %> </p>
-  <span> <%= comment.created_at %> </span>
+    <h3> <%= comment.author %> </h3>
+    <p> <%= comment.body_comment %> </p>
+    <span> <%= comment.created_at() %> </span>
+    <hr />
   <% end %>
 </div>
 
@@ -21,15 +22,15 @@
 
   <%= form_for ([@post, @post.comments.build]), :html => { :class => 'form-horizontal' } do |f| %>
     <div class="control-group">
-      <%= f.label :author, :class => 'control-label' %>
+      <%= f.label "Autor", :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :author, :class => 'text_field' %>
+        <%= f.text_field :author, :class => 'text_field input_width' %>
       </div>
     </div>
     <div class="control-group">
-      <%= f.label :body_comment, :class => 'control-label' %>
+      <%= f.label "Comentário", :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_area :body_comment, :class => 'text_area' %>
+        <%= f.text_area :body_comment, :class => 'text_area input_width input_textarea_comment' %>
       </div>
     </div>
 
