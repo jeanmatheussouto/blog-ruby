@@ -30,7 +30,9 @@
 				<div class="span9"><%= yield %></div>
 				<div class="span3 sidebar_left">
 					<h2>Últimos Posts</h2>
-					<%= ultimos_posts %>
+					<%= ultimos_posts.each do |post| %>
+						<li><%= link_to post.title, post_path(post)%></li>
+					<% end %>
 				</div>
 			</div>
 		</div>
