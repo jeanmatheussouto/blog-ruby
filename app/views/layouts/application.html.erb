@@ -30,9 +30,11 @@
 				<div class="span9"><%= yield %></div>
 				<div class="span3 sidebar_left">
 					<h2>Últimos Posts</h2>
-					<%= ultimos_posts.each do |post| %>
-						<li><%= link_to post.title, post_path(post)%></li>
-					<% end %>
+					<ul>
+						<%= ultimos_posts.each do |post| %>
+							<li><%= link_to post.title, post_path(post)%></li>
+						<% end %>
+					</ul>	
 				</div>
 			</div>
 		</div>
@@ -49,8 +51,8 @@
 					</div>
 					<div class="span4 devs">
 						<h2>Cristovão Schvaab</h2>
-						<a href="" class="facebook"><%= image_tag("facebook.png") %></a>
-						<a href="" class="twitter"><%= image_tag("twitter.png") %></a>
+						<a href="http://facebook.com/alemao512" class="facebook"><%= image_tag("facebook.png") %></a>
+						<a href="http://twitter.com/alemao_schvaab" class="twitter"><%= image_tag("twitter.png") %></a>
 					</div>
 				</div>
 			</footer>
