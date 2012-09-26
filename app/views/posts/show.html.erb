@@ -11,9 +11,10 @@
   <h2>Comentários</h2>
   <% if @post.comments.all.size > 0 %>
     <%= @post.comments.each do |comment| %>
-      <h3> <%= comment.author %> </h3>
+      <h4> <%= comment.author %> </h4>
       <p> <%= comment.body_comment %> </p>
-      <span> <%= comment.created_at() %> </span>
+      <span class="pull-right"> <%= comment.created_at() %> </span>
+      <div class="clear"></div>
       <hr />
     <% end %>
   <% else %>
@@ -21,7 +22,7 @@
   <% end %>
 </div>
 
-<div>
+<div class="comments">
   <h2>Deixe seu comentário</h2>
 
   <%= form_for ([@post, @post.comments.build]), :html => { :class => 'form-horizontal' } do |f| %>
@@ -39,8 +40,10 @@
     </div>
 
     <div >
-      <%= f.submit "Enviar Comentário", :class => 'btn btn-primary btn-large' %>
+      <%= f.submit "Enviar Comentário", :class => 'btn btn-primary btn-large pull-right' %>
     </div>
+
+    <div class="clear"></div>
   <% end %>
 
 </div>

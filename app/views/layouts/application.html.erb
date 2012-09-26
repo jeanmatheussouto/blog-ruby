@@ -30,14 +30,27 @@
 				<div class="span9"><%= yield %></div>
 				<div class="span3 sidebar_left">
 					<h2>Últimos Posts</h2>
-
+					<%= ultimos_posts %>
 				</div>
 			</div>
 		</div>
 
+
 		<div class="eng_footer">
 			<footer class="container">
-
+				<div class="row">
+					<div class="span3">Posts</div>
+					<div class="span4 offset1 devs">
+						<h2>Jean Matheus Souto</h2>
+						<a href="http://facebook.com/jeanmatheussouto" class="facebook" target="_blanck"><%= image_tag("facebook.png") %></a>
+						<a href="http://twitter.com/_JeanMatheus_" class="twitter" target="_blanck"><%= image_tag("twitter.png") %></a>
+					</div>
+					<div class="span4 devs">
+						<h2>Cristovão Schvaab</h2>
+						<a href="" class="facebook"><%= image_tag("facebook.png") %></a>
+						<a href="" class="twitter"><%= image_tag("twitter.png") %></a>
+					</div>
+				</div>
 			</footer>
 		</div>
 
